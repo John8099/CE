@@ -1,0 +1,89 @@
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  background-color: #083b08 !important;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid white;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#sidebar-wrapper .list-group a {
+  padding: 20px 20px 20px 40px;
+  font-size: 15px;
+  color: rgb(218, 221, 217) !important;
+  background-color: #083b08 !important;
+}
+
+#sidebar-wrapper .list-group a.active {
+  color: white !important;
+}
+
+#show, #hide {
+  position: absolute !important;
+  top: 7px;
+  right: 10px;
+  width: 25px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+#sidebar-wrapper .list-group a:hover {
+  background-color: #0c4e0c !important;
+  border-bottom: 2px solid #007bff !important;
+}
+
+.list-group-item.active {
+  border: none !important;
+  border-bottom: 2px solid #007bff !important;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#space {
+  height: 50px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#admin_table tbody tr td a.action {
+  float: left !important;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #admin_table tbody tr td a.action {
+    margin: none !important;
+    float: none !important;
+  }
+}
