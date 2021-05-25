@@ -20,7 +20,7 @@ function admin($db)
     $admin_user = mysqli_fetch_object($query);
 
     if (mysqli_num_rows($query) > 0) {
-        if (md5($pass) == $admin_user->password) {
+        if (password_verify($pass, $admin_user->password)) {
             $_SESSION["admin_id"] = $admin_user->id;
             echo "<script>
             alert('Welcome Admin $admin_user->fname.')
@@ -51,7 +51,7 @@ function student($db)
     $student_user = mysqli_fetch_object($query);
 
     if (mysqli_num_rows($query) > 0) {
-        if (md5($pass) == $student_user->password) {
+        if (password_verify($pass, $student_user->password)) {
             $_SESSION["user_id"] = $student_user->id;
             echo "<script>
             alert('Welcome back $student_user->student_fname $student_user->student_lname!')

@@ -6,7 +6,7 @@ $mname = $_POST["mname"];
 $lname = $_POST["lname"];
 $email = $_POST["email"];
 $uname = $_POST["uname"];
-$pass = md5($_POST["pass"]);
+$pass = password_hash($_POST["pass"], PASSWORD_ARGON2I);
 
 $query = mysqli_query($conn, "INSERT INTO `admin`(fname, mname, lname, email, uname, `password`) VALUES('$fname','$mname','$lname','$email','$uname','$pass')");
 

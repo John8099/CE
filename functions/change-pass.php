@@ -9,14 +9,14 @@ if (isset($_GET["checkCurrent"])) {
     $query = mysqli_query($conn, "SELECT * FROM students WHERE id = $id");
     $student = mysqli_fetch_object($query);
 
-    if (md5($oldPass) == $student->password) {
+    if (password_verify($oldPass, $student->password)) {
         echo "true";
     } else {
         echo "false";
     }
 } else {
     $id = $_POST['id'];
-    $pass = md5($_POST['newPass']);
+    $pass = password_hash($_POST['newPass'], PASSWORD_ARGON2I);
 
     $query = mysqli_query($conn, "UPDATE students set `password`='$pass' WHERE id = '$id'");
     if ($query) {

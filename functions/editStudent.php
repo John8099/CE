@@ -19,7 +19,7 @@ $fatherOccupation = $_POST["fatherOccupation"];
 $motherName = $_POST["motherName"];
 $motherOccupation = $_POST["motherOccupation"];
 
-$password = md5($_POST['lname']);
+$password = password_hash($_POST['lname'], PASSWORD_ARGON2I);
 
 $query = mysqli_query($conn, "UPDATE students set 
                                 student_fname = '$student_fname',
