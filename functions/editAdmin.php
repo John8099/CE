@@ -14,7 +14,7 @@ $query;
 if ($pass) {
     $query = mysqli_query($conn, "UPDATE `admin` SET fname = '$fname', mname = '$mname', lname = '$lname', email = '$email', uname = '$uname'  WHERE id = '$id'");
 } else {
-    $encrytPass = password_hash($_POST["pass"], PASSWORD_ARGON2I);
+    $encrytPass = md5($_POST["pass"]);
     $query = mysqli_query($conn, "UPDATE `admin` SET fname = '$fname', mname = '$mname', lname = '$lname', email = '$email', uname = '$uname', `password` = '$encrytPass' WHERE id = '$id'");
 }
 

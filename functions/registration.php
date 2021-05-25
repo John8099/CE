@@ -16,7 +16,7 @@ $fatherName = $_POST["fatherName"];
 $fatherOccupation = $_POST["fatherOccupation"];
 $motherName = $_POST["motherName"];
 $motherOccupation = $_POST["motherOccupation"];
-$password = password_hash($_POST['lname'], PASSWORD_ARGON2I);
+$password = md5($_POST['lname']);
 
 $insert_stundent = mysqli_query($conn, "INSERT INTO students(id, student_fname, student_mname, student_lname, student_home_add, gender, student_birthday, religion, civil_status, contact_number, email, father_name, father_occupation, mother_name, mother_occupation, `password`) VALUES(NULL, '$student_fname', '$student_mname', '$student_lname', '$homeAdd', '$gender', '$bdate', '$religion', '$civilStat','$contactNumber', '$email', '$fatherName', '$fatherOccupation', '$motherName', '$motherOccupation', '$password')");
 
