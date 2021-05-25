@@ -57,7 +57,7 @@ function admin_uname($db)
 
 function user_email($db)
 {
-    $query = mysqli_query($db, "SELECT * FROM students WHERE email = '$_POST[email]' and id != '$_POST[id]'");
+    $query = mysqli_query($db, "SELECT * FROM students WHERE email = '$_POST[email]'");
 
     if (mysqli_num_rows($query) > 0) {
         echo "true";

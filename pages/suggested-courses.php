@@ -124,7 +124,12 @@ if (!$_SESSION['admin_id']) {
 
     <script>
         $(document).ready(() => {
-            $('#admin_table').DataTable();
+            $('#admin_table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'print', 'excel'
+                ]
+            });
 
             $("#menu-toggle").click(function(e) {
                 e.preventDefault();

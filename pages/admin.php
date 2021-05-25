@@ -34,9 +34,9 @@ if (!$_SESSION['admin_id']) {
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <?php include '../components/admin_nav.php'; ?>
-            <div class="container-fluid"  style="height: 700px; overflow-y: scroll;">
+            <div class="container-fluid" style="height: 700px; overflow-y: scroll;">
                 <div class="table-responsive">
-                    <table class="table table-hover table-striped table-bordered table-sm" id="admin_table">
+                    <table id="admin_table" class="table table-hover table-striped table-bordered table-sm">
                         <thead class="table-success">
                             <tr>
                                 <th scope="col">Full name</th>
@@ -227,7 +227,12 @@ if (!$_SESSION['admin_id']) {
 
     <script>
         $(document).ready(() => {
-            $('#admin_table').DataTable();
+            $('#admin_table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'print', 'excel'
+                ]
+            });
 
             $("#menu-toggle").click(function(e) {
                 e.preventDefault();

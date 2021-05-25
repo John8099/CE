@@ -49,7 +49,7 @@ if (!$_SESSION['admin_id']) {
                                 <a href="edit-exam.php?cat=English&&id=<?php echo $row->id ?>" alt="edit" style="text-decoration: none;">
                                     <i class="fa fa-edit" style="font-size: 18px;margin: 5px"></i>
                                 </a>
-                                <a href="delete-exam.php?id=<?php echo $row->id ?>" alt="delete" class="text-danger" style="text-decoration: none;">
+                                <a href="../functions/delete-exam.php?cat=english&&id=<?php echo $row->id ?>" alt="delete" class="text-danger" style="text-decoration: none;">
                                     <i class="fa fa-times" style="font-size: 18px;margin: 5px;"></i>
                                 </a>
                             </div>

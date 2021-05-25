@@ -7,6 +7,7 @@
         $links = array(
             "admin-dashboard.php" => "Dashboard",
             "add-admin.php" => "Add Admin",
+            "add-student.php" => "Add Student",
             "admin.php" => "Admin List",
             "student.php" => "Student List",
             "create-exam.php" => "Create Exam",
@@ -15,6 +16,7 @@
         );
         $icons = array(
             "dashboard",
+            "users",
             "users",
             "th-list",
             "list",
